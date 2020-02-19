@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-5">
+
+            <form th:action="@{/user/newUser}"  method="post" th:object="${user}">
+                <h1 align="center" >Register Form</h1>
+                <div class="form-group">
+                    <label for="name">User Name</label>
+                    <input type="hidden" th:field="*{id}">
+                    <input type="text"  th:field="*{name}" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" th:field="*{email}"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" th:field="*{password}"  class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+                </div>
+                <div class="form-group">
+                    <label for="address">User address</label>
+                    <input type="text" th:field="*{address}" class="form-control" id="address" aria-describedby="emailHelp" placeholder="Enter Address">
+
+                </div>
+                <div class="form-group">
+                    <button type="reset" class="btn btn-warning text-light">Cancel</button>
+                    <button type="submit" class="btn btn-primary float-right">Submit</button>
+
+                </div>
+                <a href="/user/all">View User</a>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
